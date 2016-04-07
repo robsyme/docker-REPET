@@ -27,6 +27,5 @@ ENV GIRINST_PASSWORD hunter2
 
 to your own username and password.
 
-After than, you can build the image with:
-
-`docker build -t repet .` from the same folder as the `Dockerfile`.
+After than, you can build the image by running `docker build -t repet .`
+from the same folder as the `Dockerfile`.
