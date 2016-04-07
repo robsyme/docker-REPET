@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -yqq mysql-client ncbi-blast+ python-mysql
 
 #ADD REPET
 RUN wget https://urgi.versailles.inra.fr/download/repet/REPET_linux-x64-2.2.tar.gz \
-&& tar --directory / -xvf /tmp/REPET_linux*.tar.gz \
+&& tar --directory / -xvf REPET_linux*.tar.gz \
 && rm REPET_linux*.tar.gz \
 && mv /REPET_linux* /REPET \
 && echo "REPET_PATH=/REPET" >> /etc/environment \
