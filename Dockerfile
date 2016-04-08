@@ -16,6 +16,7 @@ RUN wget https://urgi.versailles.inra.fr/download/repet/REPET_linux-x64-2.2.tar.
 && tar --directory / -xvf REPET_linux*.tar.gz \
 && rm REPET_linux*.tar.gz \
 && mv /REPET_linux* /REPET \
+&& chown -R sgeadmin /REPET \
 && echo "REPET_PATH=/REPET" >> /etc/environment \
 && echo "export PATH=\$PATH:/REPET/bin" >> /etc/profile \
 && echo "export PYTHONPATH=/REPET" >> /etc/profile
