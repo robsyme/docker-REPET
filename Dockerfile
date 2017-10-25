@@ -9,7 +9,7 @@ ENV GIRINST_USERNAME AzureDiamond
 ENV GIRINST_PASSWORD hunter2
 
 # Basic REPET requirements
-RUN apt-get update && apt-get install -y apt-utils && apt-get install -y make && apt-get install -y gcc && apt-get install build-essential g++ && apg-get install -y wget && apt-get install -yqq mysql-client ncbi-blast+ python-mysqldb python-yaml
+RUN apt-get update && apt-get install -y apt-utils build-essential wget mysql-client ncbi-blast+ python-mysqldb python-yaml
 
 #ADD REPET
 RUN wget https://urgi.versailles.inra.fr/download/repet/REPET_linux-x64-2.5.tar.gz \
