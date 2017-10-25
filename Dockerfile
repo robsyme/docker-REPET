@@ -9,10 +9,10 @@ ENV GIRINST_USERNAME AzureDiamond
 ENV GIRINST_PASSWORD hunter2
 
 # Basic REPET requirements
-RUN apt-get update && apt-get install -yqq mysql-client ncbi-blast+ python-mysqldb python-yaml
+RUN apt-get update && apt-get install -y apt-utils build-essential wget mysql-client ncbi-blast+ python-mysqldb python-yaml
 
 #ADD REPET
-RUN wget https://urgi.versailles.inra.fr/download/repet/REPET_linux-x64-2.2.tar.gz \
+RUN wget https://urgi.versailles.inra.fr/download/repet/REPET_linux-x64-2.5.tar.gz \
 && tar --directory / -xvf REPET_linux*.tar.gz \
 && rm REPET_linux*.tar.gz \
 && mv /REPET_linux* /REPET \
@@ -77,9 +77,9 @@ RUN mkdir -p /opt/RepeatMasker \
 
 # Optional Dependencies - Repeatmasker/RepBase
 RUN cd /opt/RepeatMasker/current \
-&& wget http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/repeatmaskerlibraries-20150807.tar.gz --password=$GIRINST_PASSWORD  --user=$GIRINST_USERNAME \
-&& tar -xvf repeatmaskerlibraries-*.tar.gz \
-&& rm -rf repeatmaskerlibraries-*.tar.gz
+&& wget http://www.girinst.org/server/RepBase/protected/repeatmaskerlibraries/RepBaseRepeatMaskerEdition-20170127.tar.gz --password=$GIRINST_PASSWORD  --user=$GIRINST_USERNAME \
+&& tar -xvf RepBaseRepeatMaskerEdition-*.tar.gz \
+&& rm -rf RepBaseRepeatMaskerEdition-*.tar.gz
 
 # Optional Dependencies - Repeatmasker/Dfam
 RUN cd /opt/RepeatMasker/current/Libraries \
